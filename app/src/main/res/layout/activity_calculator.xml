@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Calculator">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:text="@string/calHeading"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:fontFamily="casual"
+            tools:layout_editor_absoluteX="71dp"
+            tools:layout_editor_absoluteY="37dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/subtotal" />
+
+        <EditText
+            android:id="@+id/t10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/iniTotal"
+            android:textColor="@android:color/black"/>
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="8dp"
+            android:onClick="saveEntry"
+            android:text="@string/save" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="389dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingRight="1dp"
+            android:paddingLeft="1dp"
+            android:paddingStart="1dp"
+            android:paddingEnd="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/shower"
+                        android:layout_width="69dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/shower" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.01"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/ShowMult"
+                    android:layout_width="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minimum" />
+
+                <Button
+                    android:id="@+id/bMinusShower"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddShower"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/toilet"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/toilet" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minimum2" />
+
+                <Button
+                    android:id="@+id/bMinusTiolet"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddToilet"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/hygiene"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/hygiene" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minimum3" />
+
+                <Button
+                    android:id="@+id/bMinusHygiene"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddHygiene"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/laundry"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/laundry" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/minimum4" />
+
+                <Button
+                    android:id="@+id/bMinusLaundry"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddLaundry"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dish"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/dishes" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minimum5" />
+
+                <Button
+                    android:id="@+id/bMinusDish"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddDish"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/drink"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/drink" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="11dp"
+                    android:text="@string/minimum6" />
+
+                <Button
+                    android:id="@+id/bMinusDrink"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddDrink"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/cook"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/cooking" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/minimum7" />
+
+                <Button
+                    android:id="@+id/bMinusCook"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddCook"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/clean"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/cleaning" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.01"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:paddingEnd="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/minimum8" />
+
+                <Button
+                    android:id="@+id/bMinusClean"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddClean"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+                    <TextView
+                        android:id="@+id/other"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:paddingEnd="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingStart="8dp"
+                        android:text="@string/other" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.01"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/subtotal" />
+
+                        <EditText
+                            android:id="@+id/t9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="8dp"
+                            android:paddingLeft="8dp"
+                            android:paddingStart="8dp"
+                            android:text="@string/iniTotal"
+                            android:textColor="@android:color/black" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minimum9" />
+
+                <Button
+                    android:id="@+id/bMinusOther"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="minusButton"
+                    android:text="@string/minus" />
+
+                <TextView
+                    android:id="@+id/showNum9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/quantity"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/bAddOther"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:onClick="addButton"
+                    android:text="@string/add" />
+
+
+            </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

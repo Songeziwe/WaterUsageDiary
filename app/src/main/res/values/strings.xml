@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Water Usage Diary</string>
+    <string name="calLauncher">Open calculator</string>
+    <string name="calHeading">Calculate water usage</string>
+    <string name="shower">Shower:</string>
+    <string name="toilet">Toilet:</string>
+    <string name="hygiene">Hygiene:</string>
+    <string name="laundry">Laundry:</string>
+    <string name="dishes">Dishes:</string>
+    <string name="cooking">Cooking:</string>
+    <string name="cleaning">Cleaning:</string>
+    <string name="other">Other:</string>
+    <string name="subtotal">Total:</string>
+    <string name="iniTotal">0 l</string>
+    <string name="drink">Drinking:</string>
+    <string name="save">Save</string>
+    <string name="totals">Total</string>
+    <string name="date">Date</string>
+    <string name="amount">Amount</string>
+    <string name="none">none</string>
+    <string name="average">Average water use per day:</string>
+    <string name="add">+</string>
+    <string name="minus">-</string>
+    <string name="quantity">0</string>
+    <string name="amShower">minimum = 3 l</string>
+    <string name="min3l">2-minutes = 20 l</string>
+    <string name="waskom">Waskom = 3 l</string>
+    <string name="hairWash">Hair wash = 10 l</string>
+    <string name="normalFlush">Flush = 9 l</string>
+    <string name="halfFlush">Half flush = 4.5 l</string>
+    <string name="washHands">Hands = 0.3 l</string>
+    <string name="face">Face = 0.5 l</string>
+    <string name="machine">Washing machine = 10 l</string>
+    <string name="minimum">min. = 3 l</string>
+    <string name="minimum2">min. = 4.5 l</string>
+    <string name="minimum3">min. = 0.3 l</string>
+    <string name="minimum4">min. = 9 l</string>
+    <string name="minimum5">min. = 3.5 l</string>
+    <string name="minimum6">min. = 3 l</string>
+    <string name="minimum7">min. = 2 l</string>
+    <string name="minimum8">min. = 8 l</string>
+    <string name="minimum9">min. = 0.5 l</string>
+    <string name="entry_Date">Water usage for:</string>
+    <string name="next">Next</string>
+    <string name="prev">previous</string>
+</resources>
