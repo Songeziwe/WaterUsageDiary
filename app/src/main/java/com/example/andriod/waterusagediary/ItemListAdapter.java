@@ -1,5 +1,11 @@
 package com.example.andriod.waterusagediary;
 
+/* For loading a collection of diary entries to the overview activity for displaying to the user.
+ *
+ * Author: Songeziwe S. Soboois
+ * Date: 12/09/2018
+ */
+
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

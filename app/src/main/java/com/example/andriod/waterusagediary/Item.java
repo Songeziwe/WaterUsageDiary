@@ -1,5 +1,11 @@
 package com.example.andriod.waterusagediary;
 
+/* This class acts as a model for items diary entries that will be listed on the overview window
+ *
+ * Author: Songeziwe S. Soboois
+ * Date: 12/09/2018
+ */
+
 public class Item {
     private String date;
     private String amount;

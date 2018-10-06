@@ -1,5 +1,10 @@
 package com.example.andriod.waterusagediary;
 
+/* This class defines a database for storing the user entries
+ *
+ * Author: Songeziwe S. Soboois
+ * Date: 12/09/2018
+ */
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

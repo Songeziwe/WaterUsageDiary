@@ -1,5 +1,11 @@
 package com.example.andriod.waterusagediary;
 
+/* After clicking on the calculator launcher of the overview activity this activity is invoked
+ *
+ * Author: Songeziwe S. Soboois
+ * Date: 12/09/2018
+ */
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
